@@ -1,4 +1,4 @@
-import { makeStyles } from '@material-ui/core/styles';
+import { styled } from "@mui/system";
 
 export const StyledMedia = styled('div')(({theme}) => ({
     height: 0,

@@ -1,11 +1,19 @@
 import React from "react";
 import {Container, Grow, Grid} from '@mui/material';
+import {useDispatch} from 'react-redux';
+import { getPosts } from "./actions/posts";
 import memories from './images/memories.png';
 import Posts from "./components/Posts/Posts";
 import Form from "./components/Form/Form";
 import {StyledAppBar, StyledHeading, StyledImage} from "./styles";
+import { useEffect } from 'react';
 
 const App = () => {
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(getPosts());
+    },[dispatch]);
 
     return (
         <Container maxwidth='lg'>
