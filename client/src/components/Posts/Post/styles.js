@@ -1,6 +1,7 @@
 import { styled } from "@mui/system";
+import { Card, CardActions, CardMedia, Button, Typography } from '@mui/material';
 
-export const StyledMedia = styled('div')(({theme}) => ({
+export const StyledMedia = styled(CardMedia)(({theme}) => ({
     height: 0,
     paddingTop: '56.25%',
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
@@ -15,7 +16,7 @@ export const StyledFullHeightCard = styled('div')(({theme}) => ({
     height: '100%',
 }));
 
-export const StyledCard = styled('div')(({theme}) => ({
+export const StyledCard = styled(Card)(({theme}) => ({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
@@ -48,11 +49,11 @@ export const StyledDetails = styled('div')(({theme}) => ({
     margin: '20px',
 }));
 
-export const StyledTitle = styled('div')(({theme}) => ({
+export const StyledTitle = styled(Typography)(({theme}) => ({
     padding: '0 16px',
 }));
 
-export const StyledCardActions = styled('div')(({theme}) => ({
+export const StyledCardActions = styled(CardActions)(({theme}) => ({
     padding: '0 16px 8px 16px',
     display: 'flex',
     justifyContent: 'space-between',

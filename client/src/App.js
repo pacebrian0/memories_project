@@ -5,15 +5,16 @@ import { getPosts } from "./actions/posts";
 import memories from './images/memories.png';
 import Posts from "./components/Posts/Posts";
 import Form from "./components/Form/Form";
-import {StyledAppBar, StyledHeading, StyledImage} from "./styles";
-import { useEffect } from 'react';
+import {StyledAppBar, StyledHeading, StyledImage, StyledMainContainer} from "./styles";
+import { useState, useEffect } from 'react';
 
 const App = () => {
+    const [currentId,setCurrentId] = useState(null);
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(getPosts());
-    },[dispatch]);
+    },[currentId,dispatch]);
 
     return (
         <Container maxwidth='lg'>
@@ -23,16 +24,16 @@ const App = () => {
             </StyledAppBar>
             <Grow in>
                 <Container>
-                    <Grid container justify="space-between" alignItems="stretch" spacing={3}>
+                    <StyledMainContainer container justify="space-between" alignItems="stretch" spacing={3}>
                         <Grid item xs={12} sm={7}>
-                            <Posts />
+                            <Posts setCurrentId={setCurrentId} />
                             <div>hello</div>
                         </Grid>
                         <Grid item xs={12} sm={4}>
-                            <Form />
+                            <Form currentId={currentId} setCurrentId={setCurrentId}/>
                         </Grid>
 
-                    </Grid>
+                    </StyledMainContainer>
                 </Container>
             </Grow>
         </Container>
